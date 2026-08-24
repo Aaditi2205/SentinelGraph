@@ -1,0 +1,12 @@
+{
+  "dataset": "IEEE-CIS Fraud Detection (Vesta)",
+  "official_url": "https://www.kaggle.com/competitions/ieee-fraud-detection/data",
+  "public_mirror": "https://www.kaggle.com/datasets/lnasiri007/ieeecis-fraud-detection",
+  "license_note": "Competition access is governed by Kaggle rules. The public mirror lists no license; confirm rights before non-evaluation use.",
+  "files": {
+    "train_transaction.csv": {"sha256": "3A5C83AB6B3CC13DCABE5FFA9F522307FD5F7F7B6E6F6A60C32284CA6283D642", "rows": 590540},
+    "train_identity.csv": {"sha256": "B63C725D8377BE90A995268D97F347C17D456B95DB45807ADCF9F59CD603C37C", "matched_non_null_identity_rows": 140872}
+  },
+  "split": "Stable chronological sort by TransactionDT, TransactionID; 70% train, 15% calibration/validation, 15% locked test.",
+  "privacy": "Raw competition files are ignored. UI entity identifiers are truncated SHA-256 pseudonyms."
+}

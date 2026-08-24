@@ -1,0 +1,7 @@
+services:
+  sentinelgraph:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      RAZORPAY_WEBHOOK_SECRET: ${RAZORPAY_WEBHOOK_SECRET:-}

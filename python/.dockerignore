@@ -1,0 +1,9 @@
+.git
+.venv
+__pycache__
+.pytest_cache
+data/raw
+*.zip
+*.csv
+.env
+artifacts/runtime_state.json
