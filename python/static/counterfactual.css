@@ -1,0 +1,124 @@
+.counterfactual-box {
+  border: 1px solid var(--line);
+  margin: 0 0 12px;
+  padding: 10px;
+}
+
+.counterfactual-box > div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.counterfactual-box small,
+.counterfactual-box > div:first-child span {
+  color: var(--muted);
+  font: 8px var(--mono);
+  text-transform: uppercase;
+}
+
+.counterfactual-box p {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.counterfactual-box #counterfactualRows > div {
+  border-top: 1px solid var(--line);
+  display: grid;
+  font-size: 9px;
+  gap: 2px 8px;
+  grid-template-columns: 1fr auto;
+  padding: 6px 0;
+}
+
+.counterfactual-box #counterfactualRows strong {
+  color: var(--orange);
+}
+
+.counterfactual-box #counterfactualRows small {
+  grid-column: 1 / -1;
+}
+
+.capacity-card {
+  align-items: center;
+  background: #17231c;
+  border: 1px solid #314037;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 220px 1fr 220px;
+  margin-top: 12px;
+  padding: 20px 24px;
+}
+
+.capacity-card > div:first-child span {
+  color: #93a098;
+  display: block;
+  font: 8px var(--mono);
+}
+
+.capacity-card > div:first-child strong {
+  display: block;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.capacity-card > p {
+  color: #93a098;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.capacity-rows {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.capacity-row {
+  border-left: 1px solid #314037;
+  padding: 4px 12px;
+}
+
+.capacity-row strong,
+.capacity-row span,
+.capacity-row b {
+  display: block;
+}
+
+.capacity-row strong {
+  color: white;
+  font-size: 16px;
+}
+
+.capacity-row span,
+.capacity-row b {
+  font-size: 8px;
+  margin-top: 4px;
+}
+
+.capacity-row span { color: #93a098; }
+.capacity-row b { color: var(--acid); }
+.capacity-row.baseline b { color: var(--orange); }
+
+@media (max-width: 900px) {
+  .capacity-card { grid-template-columns: 1fr; }
+  .capacity-rows { grid-template-columns: repeat(2, 1fr); }
+}
+
+.capacity-context {
+  background: #edf0e8;
+  border: 1px solid var(--line);
+  border-top: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 12px 18px;
+}
+
+.capacity-context strong { color: var(--ink); }
+
+.live-badge {
+  background: #edf5cf;
+  border: 1px solid #bfd269 !important;
+  color: #33461b !important;
+  font: 8px var(--mono) !important;
+  padding: 5px 7px !important;
+}

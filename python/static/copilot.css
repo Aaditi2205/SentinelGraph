@@ -1,0 +1,49 @@
+.copilot-section { padding-top: 104px; }
+.copilot-pipeline { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 15px 20px; margin-bottom: 18px; border: 1px solid var(--line); background: #f1f4ed; font: 500 11px/1.2 "DM Mono", monospace; letter-spacing: .07em; color: #1d503d; }
+.copilot-pipeline i { color: #80a08e; font-style: normal; }
+.copilot-shell { display: grid; grid-template-columns: minmax(300px, .8fr) minmax(0, 1.55fr); border: 1px solid var(--line); background: #fff; box-shadow: 0 18px 60px rgba(17, 46, 35, .06); }
+.copilot-input { padding: 30px; border-right: 1px solid var(--line); background: #f7f7f2; }
+.copilot-runtime { padding: 17px; margin-bottom: 24px; border-left: 3px solid #1f704f; background: #e8f3e9; }
+.copilot-runtime small, .copilot-label { display: block; font: 500 10px/1.2 "DM Mono", monospace; letter-spacing: .1em; color: #597065; }
+.copilot-runtime strong { display: block; margin: 7px 0; font-size: 15px; color: #123f2f; }
+.copilot-runtime p, .copilot-privacy { margin: 0; font-size: 12px; line-height: 1.55; color: #617067; }
+.copilot-input label { display: block; margin-bottom: 8px; font: 500 11px/1.2 "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.copilot-input textarea { width: 100%; resize: vertical; box-sizing: border-box; padding: 14px; border: 1px solid #cfd5cc; background: #fff; color: #14261f; font: 500 13px/1.55 Manrope, sans-serif; }
+.copilot-input .button { width: 100%; margin-top: 12px; justify-content: center; }
+.copilot-input .button[disabled] { opacity: .55; cursor: wait; }
+.copilot-eval { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 22px 0 14px; background: #d6ddd6; border: 1px solid #d6ddd6; }
+.copilot-eval span { padding: 11px 8px; background: #fff; }
+.copilot-eval small { display: block; min-height: 24px; font: 500 8px/1.4 "DM Mono", monospace; letter-spacing: .05em; color: #718078; }
+.copilot-eval b { display: block; margin-top: 5px; font-size: 16px; color: #143c2e; }
+.copilot-output { min-height: 560px; padding: 30px; background: #0c1d17; color: #eef5ef; }
+.copilot-output-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.copilot-output-head small { display: block; font: 500 10px/1.2 "DM Mono", monospace; letter-spacing: .1em; color: #8eaa9e; }
+.copilot-output-head strong { display: block; margin-top: 7px; font-size: 19px; }
+.copilot-output-head > span { padding: 7px 10px; border: 1px solid rgba(255,255,255,.16); font: 500 9px/1.2 "DM Mono", monospace; letter-spacing: .07em; color: #aebdb5; }
+.copilot-output-head > span.passed { border-color: #4d9f72; background: rgba(71, 151, 104, .16); color: #8de0af; }
+.copilot-summary { margin: 24px 0; font-size: 17px; line-height: 1.55; color: #eef5ef; }
+.copilot-claims { display: grid; gap: 8px; margin-bottom: 28px; }
+.copilot-claim { display: grid; grid-template-columns: 24px 1fr; gap: 10px; padding: 12px 14px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.035); }
+.copilot-claim > span { font: 500 10px/1.4 "DM Mono", monospace; color: #61b585; }
+.copilot-claim p { margin: 0; font-size: 12px; line-height: 1.55; color: #d5dfd9; }
+.copilot-claim small { display: block; margin-top: 5px; font: 500 9px/1.3 "DM Mono", monospace; color: #7fb093; }
+.copilot-sources { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 9px 0 20px; }
+.copilot-source { padding: 12px; border: 1px solid rgba(255,255,255,.12); }
+.copilot-source b { display: block; font: 500 10px/1.3 "DM Mono", monospace; color: #6ec18f; }
+.copilot-source strong { display: block; margin: 6px 0; font-size: 12px; }
+.copilot-source small { color: #8da197; font-size: 9px; }
+.copilot-validation { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,.12); }
+.copilot-validation span { padding: 10px; background: #12271f; font: 500 9px/1.3 "DM Mono", monospace; color: #9cb1a6; }
+.copilot-validation span.ok { color: #76d49c; }
+@media (max-width: 900px) {
+  .copilot-pipeline { flex-wrap: wrap; justify-content: flex-start; }
+  .copilot-shell { grid-template-columns: 1fr; }
+  .copilot-input { border-right: 0; border-bottom: 1px solid var(--line); }
+  .copilot-sources { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .copilot-section { padding-top: 72px; }
+  .copilot-input, .copilot-output { padding: 20px; }
+  .copilot-eval, .copilot-validation { grid-template-columns: 1fr 1fr; }
+  .copilot-output-head { flex-direction: column; }
+}

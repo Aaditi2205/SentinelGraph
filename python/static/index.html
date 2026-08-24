@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SentinelGraph — a leakage-safe abuse-ring defender for merchants" />
+    <title>SentinelGraph — Stop the ring, spare the customer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/counterfactual.css" />
+    <link rel="stylesheet" href="/advanced.css" />
+    <link rel="stylesheet" href="/currency.css" />
+    <link rel="stylesheet" href="/copilot.css" />
+    <link rel="stylesheet" href="/console.css" />
+  </head>
+  <body>
+    <aside class="app-sidebar">
+      <a class="sidebar-brand" href="#incident"><span class="brand-mark"><i></i><i></i><i></i></span><span><strong>SentinelGraph</strong><small>Risk operations</small></span></a>
+      <div class="merchant-context"><small>MERCHANT WORKSPACE</small><strong>Northstar Commerce</strong><span>TEST MODE</span></div>
+      <nav class="console-nav" aria-label="SentinelGraph workspaces">
+        <a href="#overview" data-console-route="overview"><b>01</b><span><strong>Overview</strong><small>Portfolio posture</small></span></a>
+        <a href="#incident" data-console-route="incident"><b>02</b><span><strong>Decision firewall</strong><small>Containment diff</small></span></a>
+        <a href="#copilot" data-console-route="copilot"><b>03</b><span><strong>AI copilot</strong><small>Grounded briefing</small></span></a>
+        <a href="#evaluation" data-console-route="evaluation"><b>04</b><span><strong>Policy simulator</strong><small>Shadow operating point</small></span></a>
+        <a href="#controls" data-console-route="controls"><b>05</b><span><strong>Controls & audit</strong><small>Failures and ingress</small></span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-health"><span></span><div><strong>All controls active</strong><small>Last policy check · now</small></div></div>
+        <p>Razorpay test mode · Defense only</p>
+      </div>
+    </aside>
+
+    <div class="app-workspace">
+      <header class="workspace-topbar">
+        <div class="workspace-heading"><small id="workspaceEyebrow">RISK OPERATIONS</small><strong id="workspaceTitle">Overview</strong></div>
+        <div class="workspace-status">
+          <span class="gemini-live" id="generatorState"><i></i>Checking brief generator</span>
+          <div class="system-state"><i></i><span>Graph online</span></div>
+          <span class="analyst-avatar" aria-label="Analyst Aaditi Malhotra">AM</span>
+        </div>
+      </header>
+
+    <main id="top" class="console-main">
+      <section class="hero shell" id="overview" data-console-view="overview">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>COMMAND CENTER</span> LIVE RISK POSTURE</div>
+          <h1>Risk operations,<br /><em>without overreach.</em></h1>
+          <p class="lede">Detect coordinated payment abuse, investigate the evidence graph, and take the smallest permitted action from one bounded merchant workspace.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#incident">Open decision firewall <span>→</span></a>
+            <a class="button ghost" href="#evaluation">Review model evidence</a>
+          </div>
+          <div class="hero-proof"><span><b>REAL DATA</b> IEEE-CIS / Vesta</span><span><b>PAST ONLY</b> No future leakage</span><span><b>BOUNDED</b> Human-gated actions</span></div>
+        </div>
+        <div class="hero-network" aria-hidden="true">
+          <svg viewBox="0 0 560 440">
+            <g class="hero-lines"><path d="M82 92L253 78L365 151L491 94M253 78L242 225L365 151L430 300L242 225L113 317M242 225L334 377M113 317L334 377" /></g>
+            <g class="hero-dots"><circle cx="82" cy="92" r="9"/><circle cx="253" cy="78" r="15"/><circle cx="365" cy="151" r="9"/><circle cx="491" cy="94" r="6"/><circle cx="242" cy="225" r="30" class="core"/><circle cx="430" cy="300" r="12"/><circle cx="113" cy="317" r="8"/><circle cx="334" cy="377" r="10"/></g>
+          </svg>
+          <div class="network-label target"><small>RING RISK</small><strong id="heroRisk">—</strong></div>
+          <div class="network-label delta"><small>CONTEXT LIFT</small><strong id="heroDelta">—</strong></div>
+        </div>
+      </section>
+
+      <section class="metrics shell" id="metricStrip" data-console-view="overview">
+        <article><span>Real labelled events</span><strong id="rowCount">—</strong><small>chronological stream</small></article>
+        <article><span>Graph model AP</span><strong id="graphAp">—</strong><small>locked final 15%</small></article>
+        <article><span>Fraud exposure captured</span><strong id="valueCapture">—</strong><small>INR scenario · 1% queue</small></article>
+        <article><span>Label availability</span><strong>+24h</strong><small>conservative delay</small></article>
+      </section>
+      <div class="capacity-context shell" id="capacityContext" data-console-view="overview">Loading the review-capacity denominator…</div>
+      <div class="currency-context shell" id="currencyContext" data-console-view="overview">Loading the financial-unit boundary…</div>
+
+      <section class="section shell" id="incident" data-console-view="incident">
+        <div class="decision-firewall">
+          <div class="firewall-hero">
+            <div><span class="firewall-badge">LIVE DECISION FIREWALL · CORE USP</span><h2>Bring an incident.<br />Compile the safe action.</h2></div>
+            <p>Paste merchant payment context or start from the public real-data sample. SentinelGraph tokenises entity keys, rebuilds the graph, calculates the blast radius of a proposed block, and returns the smallest reversible transaction plan.</p>
+          </div>
+          <div class="workbench-card">
+            <div class="workbench-head">
+              <div><small>MERCHANT INCIDENT WORKBENCH</small><strong>This graph is yours to change.</strong><p>Risk is an explicit upstream input. Card, device and address values are hashed in memory; this endpoint does not persist the batch.</p></div>
+              <div class="workbench-actions"><button id="loadSampleButton" class="button ghost">Restore public sample</button><button id="addPaymentButton" class="button ghost">＋ Add payment</button><button id="compileWorkbenchButton" class="button primary">Compile new incident →</button></div>
+            </div>
+            <div class="workbench-table-wrap">
+              <table class="workbench-table">
+                <thead><tr><th>Target</th><th>Payment ID</th><th>Amount ₹</th><th>Risk %</th><th>Card token</th><th>Device token</th><th>Address token</th><th></th></tr></thead>
+                <tbody id="workbenchRows"></tbody>
+              </table>
+            </div>
+            <div class="workbench-status"><span id="workbenchSource">PUBLIC REAL-DATA STARTER · 8 PAYMENTS</span><strong id="workbenchStatus">Edit a relationship, add a payment, or move the target—then compile.</strong><b id="workbenchPrivacy">NOT PERSISTED</b></div>
+            <div id="impactLedger" class="impact-ledger" aria-live="polite"></div>
+          </div>
+          <div class="firewall-proposal">
+            <label for="blastProposal"><small>MERCHANT PROPOSED ACTION</small><select id="blastProposal"><option value="block_card">Block the shared card profile</option><option value="block_address">Block the shared address</option><option value="hold_component">Hold the entire connected component</option></select></label>
+            <button id="simulateBlastButton" class="button primary">Run containment diff →</button>
+          </div>
+          <div class="blast-diff">
+            <article class="blast-requested">
+              <div><small>REQUESTED SCOPE</small><span>UNSAFE · ENTITY-WIDE</span></div>
+              <strong id="firewallRequestedTitle">Block shared card profile</strong>
+              <div class="blast-stats"><span><b id="firewallAffected">—</b>payments touched</span><span><b id="firewallVolume">—</b>volume frozen</span><span><b id="firewallLegitimate">—</b>labelled legitimate</span></div>
+            </article>
+            <div class="rewrite-arrow"><span>POLICY<br />REWRITE</span><b>→</b></div>
+            <article class="blast-safe">
+              <div><small>SENTINELGRAPH PLAN</small><span id="firewallStatus">READY TO SIMULATE</span></div>
+              <strong>Transaction-level containment</strong>
+              <div class="safe-plan-line"><span><b id="firewallReviewCount">—</b>review</span><span><b id="firewallHoldCount">—</b>hold</span><span><b id="firewallAllowCount">—</b>left untouched</span></div>
+              <p><b id="firewallSpared">—</b> operational volume spared from the proposed broad freeze.</p>
+            </article>
+          </div>
+          <div class="firewall-receipt"><span><i></i><b id="firewallReceiptTitle">Compiling server preview</b></span><p id="firewallReason">The authority engine is calculating the requested scope and permitted rewrite.</p><div class="identity-receipt"><span>REQUEST <code id="firewallInputIdentity">—</code></span><b>≠</b><span>ENFORCED <code id="firewallEnforcedIdentity">—</code></span></div><small id="firewallMethod">The operational impact uses only supplied payments, entity links, risk and cost policy. Resolved labels are evaluation-only and never enter the action identity.</small></div>
+        </div>
+        <div class="section-heading">
+          <div><span class="kicker">EVIDENCE VIEW</span><h2>Inspect why the rewrite<br />was necessary.</h2></div>
+          <p>Replay the linked transactions chronologically, inspect the exact relationships that changed risk, and verify the bounded plan against its evidence and costs.</p>
+        </div>
+
+        <div class="incident-shell">
+          <div class="incident-bar">
+            <div><span class="pulse"></span><strong id="incidentId">SG-INC-042</strong><small id="incidentTitle">Emerging multi-card abuse ring</small><small class="live-badge">DERIVED REPLAY · LIVE MODEL RESCORE</small></div>
+            <div class="replay-controls"><button id="replayButton" class="button primary">▶ Replay events</button><button id="resetButton" class="icon-button" aria-label="Reset replay">↺</button></div>
+          </div>
+          <div class="incident-grid">
+            <article class="graph-panel">
+              <div class="panel-head"><div><span>Temporal entity graph</span><small>Only information available at event time</small></div><div class="legend"><span><i class="tx"></i>Payment</span><span><i class="entity"></i>Entity</span><span><i class="fraud"></i>Post-resolution fraud</span></div></div>
+              <div class="graph-stage">
+                <svg id="graphSvg" viewBox="0 0 760 480" role="img" aria-label="Linked transaction graph"></svg>
+                <div class="graph-empty" id="graphEmpty"><span>◎</span><strong>Ready to replay</strong><small>Events will arrive in chronological order</small></div>
+                <div class="event-toast" id="eventToast"></div>
+              </div>
+              <div class="event-rail"><div class="event-progress"><i id="eventProgress"></i></div><div><span id="eventSequence">0 / 0 events</span><strong id="eventTime">T+0 min</strong></div></div>
+            </article>
+
+            <aside class="agent-panel">
+              <div class="agent-head"><div class="agent-avatar">SG</div><div><span>Incident commander</span><small>Observe → verify → recommend → gate</small></div><div class="thinking" id="agentState"><i></i>Waiting</div></div>
+              <div class="risk-shift">
+                <div><small>Transaction-only</small><strong id="transactionRisk">—</strong></div>
+                <span>→</span>
+                <div><small>With graph context</small><strong id="ringRisk">—</strong></div>
+              </div>
+              <div class="confidence-strip">
+                <div><small>OPERATIONAL CONFIDENCE</small><strong id="confidenceLevel">—</strong></div>
+                <p id="confidenceReason">Calculated separately from fraud probability.</p>
+                <span id="calibrationSupport">— validation neighbours</span>
+              </div>
+              <div class="agent-summary"><div class="agent-summary-head"><small id="briefLabel">LIVE EVENT BRIEF</small><span id="currentEventLabel">NO EVENT SELECTED</span></div><p id="agentSummary">Run the replay to watch the commander update on every payment.</p><div id="factChips" class="fact-chips"></div></div>
+              <div class="counterfactual-box"><div><small>Relationship ablation</small><span>MASK → RESCORE</span></div><div id="counterfactualRows"><p>Waiting for graph context.</p></div></div>
+              <div class="temporal-guard"><div><small>TIME-TRAVEL GUARD</small><strong id="temporalCutoff">—</strong></div><p id="temporalRule">Score first; insert later. Future labels are inaccessible.</p><span id="labelDelay">—</span></div>
+              <div class="decision-box">
+                <div><small>Bounded recommendation</small><strong id="agentAction">WAITING</strong></div>
+                <p id="agentReason">No money-impacting action has been proposed.</p>
+                <div class="cost-row"><span>Allow <b id="allowCost">—</b></span><span>Review <b id="reviewCost">—</b></span><span>Hold <b id="holdCost">—</b></span></div>
+              </div>
+              <div class="guardrail-box" id="guardrailBox"><span>✓</span><div><strong>Authority boundary</strong><p id="guardrailText">The agent may act only on individual transactions. Shared devices and identities require analyst approval.</p></div></div>
+              <div class="analyst-box">
+                <div><small>HUMAN FEEDBACK LOOP</small><span id="feedbackStatus">Not reviewed</span></div>
+                <input id="analystName" value="demo.analyst@merchant.test" aria-label="Analyst identity" />
+                <textarea id="feedbackNote" rows="2" aria-label="Analyst note" placeholder="Evidence checked / customer verified"></textarea>
+                <div><button class="mini-button confirm" data-feedback="confirm_fraud">Confirm fraud</button><button class="mini-button reverse" data-feedback="mark_legitimate">Mark legitimate</button><button class="mini-button" data-feedback="request_more_evidence">Need evidence</button><button class="mini-button" data-feedback="clear_resolution">Clear resolution</button></div>
+                <p id="entityUpdate">A decision updates only entities linked to this incident and is appended to the audit chain.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell containment" data-console-view="incident">
+        <div class="section-heading compact">
+          <div><span class="kicker">02 / MINIMUM BLAST RADIUS</span><h2>Contain the attack,<br />not the whole component.</h2></div>
+          <p>A graph can overreact. SentinelGraph explicitly separates suspicious transactions from shared infrastructure that may also serve legitimate customers.</p>
+        </div>
+        <div class="containment-grid">
+          <article class="plan-card hold"><span>01</span><small>Temporary hold</small><strong id="holdPlan">—</strong><p id="holdPlanReason">Used only when it is the lowest-cost permitted action.</p></article>
+          <article class="plan-card review"><span>02</span><small>Human review</small><strong id="reviewPlan">—</strong><p>Ambiguous bridge payments receive additional verification.</p></article>
+          <article class="plan-card allow"><span>03</span><small>Do not block</small><strong id="allowPlan">—</strong><p>Earlier connected payments remain untouched without sufficient evidence.</p></article>
+          <aside class="unsafe-test">
+            <span>GUARDRAIL TEST</span><strong>Ask the agent to block the shared device</strong><p>This is intentionally outside its authority.</p><button id="unsafeButton" class="button danger">Attempt unsafe action</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section shell copilot-section" id="copilot" data-console-view="copilot">
+        <div class="section-heading">
+          <div><span class="kicker">03 / EVIDENCE-GROUNDED COPILOT</span><h2>Let the LLM write.<br />Never let it decide.</h2></div>
+          <p>A hybrid policy RAG retrieves the applicable clauses. A structured generator drafts the brief, then a deterministic claim gate checks every citation and refuses any action outside the policy engine’s decision.</p>
+        </div>
+        <div class="copilot-pipeline"><span>01 · HYBRID RETRIEVAL</span><i>→</i><span>02 · STRICT JSON SCHEMA</span><i>→</i><span>03 · CLAIM GATE</span><i>→</i><span>04 · AUDIT</span></div>
+        <div class="copilot-shell">
+          <aside class="copilot-input">
+            <div class="copilot-runtime"><small>GENERATOR</small><strong id="copilotMode">Checking runtime…</strong><p id="copilotRuntimeText">The LLM is optional; the authority and evidence gates are not.</p></div>
+            <label for="copilotQuestion">Ask about this incident</label>
+            <textarea id="copilotQuestion" rows="5">Why did graph context change this case, which policy applies, and what may an analyst safely do next?</textarea>
+            <button id="copilotButton" class="button primary">Generate grounded brief</button>
+            <div class="copilot-eval"><span><small>RETRIEVAL RECALL@3</small><b id="ragRecall">—</b></span><span><small>LABELLED QUERIES</small><b id="ragCases">—</b></span><span><small>MONEY AUTHORITY</small><b>NONE</b></span></div>
+            <p class="copilot-privacy">Only hashed incident evidence and retrieved clauses may reach the optional model. Gemini interaction storage is disabled. The analyst question is treated as untrusted data.</p>
+          </aside>
+          <article class="copilot-output" aria-live="polite">
+            <div class="copilot-output-head"><div><small>INVESTIGATION BRIEF</small><strong id="copilotResultMode">Waiting for a question</strong></div><span id="copilotGate">CLAIM GATE · IDLE</span></div>
+            <p class="copilot-summary" id="copilotSummary">Run the copilot to retrieve policy, draft a cited case brief, and verify it against the deterministic action boundary.</p>
+            <div id="copilotClaims" class="copilot-claims"></div>
+            <div><small class="copilot-label">RETRIEVED POLICY CLAUSES</small><div id="copilotSources" class="copilot-sources"></div></div>
+            <div id="copilotValidation" class="copilot-validation"><span>Schema —</span><span>Citations —</span><span>Authority —</span><span>Audit —</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="dark-section" id="evaluation" data-console-view="evaluation">
+        <div class="shell section">
+          <div class="section-heading light">
+            <div><span class="kicker">04 / SHADOW POLICY LAB</span><h2>Choose the operating point,<br />not the prettiest metric.</h2></div>
+            <p>Set the merchant’s real analyst capacity. SentinelGraph compares both models on the same locked chronological outcomes and recommends the cheaper queue—not automatically the graph model.</p>
+          </div>
+          <div class="policy-lab">
+            <div class="policy-lab-control"><div class="merchant-objective"><label for="merchantPolicy">MERCHANT OBJECTIVE</label><select id="merchantPolicy" aria-label="Select merchant operating policy"></select><p id="policyAssumptions">Loading scenario controls…</p></div><div><small>DAILY REVIEW CAPACITY</small><strong><span id="selectedCapacity">1.00%</span> of held-out traffic</strong><p id="policyLabMethod">Move the control to recompute the bounded queue on locked outcomes.</p></div><input id="capacitySlider" type="range" min="0" max="4" step="1" value="2" aria-label="Select review capacity" /><div class="capacity-ticks"><span>0.25%</span><span>0.5%</span><span>1%</span><span>2%</span><span>5%</span></div></div>
+            <div class="policy-lab-result">
+              <span>RECOMMENDED SHADOW POLICY</span><strong id="selectedModel">—</strong><p id="selectedReason">Loading held-out operating points…</p>
+              <div><small>QUEUE</small><b id="selectedReviews">—</b></div><div><small>FRAUDS CAUGHT</small><b id="selectedCaught">—</b></div><div><small>EXPOSURE PREVENTED*</small><b id="selectedExposure">—</b></div><div><small>FALSE POSITIVES</small><b id="selectedFalsePositives">—</b></div>
+            </div>
+          </div>
+          <div class="graph-rescue-lab">
+            <div class="rescue-head"><div><span>HELD-OUT GRAPH RESCUES · NOT CHERRY-PICKED TRAIN ROWS</span><strong>Where relationships changed the queue.</strong></div><p id="rescueDefinition">Loading locked-test evidence…</p></div>
+            <div id="rescueTabs" class="rescue-tabs" role="tablist" aria-label="Held-out graph rescue cases"></div>
+            <article class="rescue-detail"><div class="rescue-risk"><span><small>TRANSACTION ONLY</small><strong id="rescueBaseRisk">—</strong><b id="rescueBaseAction">—</b></span><i>→</i><span><small>WITH PAST-ONLY GRAPH</small><strong id="rescueGraphRisk">—</strong><b id="rescueGraphAction">—</b></span></div><div><span id="rescueCaseId">—</span><strong id="rescueLift">—</strong><p id="rescueQueueResult">—</p><div id="rescueEvidence" class="rescue-evidence"></div></div></article>
+            <div class="graph-no-case"><span>MODEL SAYS NO</span><strong id="graphNoiseTitle">—</strong><p id="graphNoiseText">Loading a held-out case where graph context added noise…</p></div>
+          </div>
+          <div class="cold-start-card"><div><span>COLD-START EVALUATION · SAME GLOBAL 1% THRESHOLD</span><strong>Does the graph survive unseen entities?</strong><p id="coldStartMethod">Loading entity-history slices…</p></div><div id="coldStartRows" class="cold-start-rows"></div></div>
+          <div class="proof-grid">
+            <article class="ablation-card"><div class="card-title"><span>Transaction-only model</span><small>BASELINE</small></div><strong id="baseAp">—</strong><p>average precision</p><div class="bar"><i id="baseBar"></i></div><div class="card-stats"><span>Recall @ 1% <b id="baseRecall">—</b></span><span>Value capture <b id="baseValue">—</b></span></div></article>
+            <article class="ablation-card featured"><div class="card-title"><span>+ temporal graph</span><small>CHALLENGER</small></div><strong id="fullAp">—</strong><p>average precision</p><div class="bar"><i id="fullBar"></i></div><div class="card-stats"><span>Recall @ 1% <b id="fullRecall">—</b></span><span>Value capture <b id="fullValue">—</b></span></div></article>
+            <article class="lift-card"><span>GRAPH CONTRIBUTION</span><strong id="apLift">—</strong><p id="confidenceText">95% bootstrap interval loading…</p><div class="verdict" id="ablationVerdict">Evaluating</div></article>
+          </div>
+          <div class="capacity-card"><div><span>MERCHANT REVIEW CAPACITY</span><strong>Where does graph context pay for itself?</strong></div><div id="capacityRows" class="capacity-rows"></div><p>The graph is evaluated at every capacity; the UI does not imply that one model wins every operating point.</p></div>
+          <div class="system-proof">
+            <article><span>FOUR-SYSTEM COMPARISON · SAME 1% QUEUE</span><p class="system-note">A false positive is a legitimate payment consuming a review slot. Cost shown = false positives × ₹120 analyst-review assumption.</p><div id="systemRows"></div></article>
+            <article class="drift-card"><span>DRIFT MONITOR · COMPUTED, NOT MOCKED</span><div class="drift-head"><strong id="driftStatus">—</strong><b id="driftPsi">—</b></div><p id="driftBoundary">Loading PSI boundary…</p><div id="driftRows"></div></article>
+          </div>
+          <div class="ops-proof"><span><small>95% CI · RECALL @ 1%</small><strong id="recallCi">—</strong></span><span><small>FIXED 0.5% FPR</small><strong id="fixedFpr">—</strong></span><span><small>GRAPH INFERENCE P95</small><strong id="latencyP95">—</strong></span><span><small>INR EXPOSURE MISSED</small><strong id="valueMissed">—</strong></span><span><small>GRAPH FEATURE THROUGHPUT</small><strong id="featureThroughput">—</strong></span></div>
+          <div class="data-provenance"><div><span>DATA PROVENANCE</span><strong>IEEE-CIS / Vesta</strong><p id="dataNote">The animation replays a fixed sequence derived from locked-test rows. Model inference, calibration, policy and counterfactual re-scoring execute live.</p></div><div><span>FINANCIAL UNIT</span><strong>Source USD → scenario INR</strong><p>Raw TransactionAmt remains USD for the model. Economics and display multiply it by the locked scenario rate of ₹83/USD before adding INR costs.</p></div><div><span>LEAKAGE CONTROL</span><strong>Score → then insert</strong><p>Each event sees only prior graph state; confirmed labels arrive after a 24-hour delay.</p></div><div><span>HONEST LIMIT</span><strong>Not Indian UPI traffic</strong><p>Useful for system validation, not a claim of production readiness for every rail.</p></div></div>
+        </div>
+      </section>
+
+      <section class="section shell" id="controls" data-console-view="controls">
+        <div class="section-heading">
+          <div><span class="kicker">05 / TRUST BOUNDARY</span><h2>The failure is part<br />of the product.</h2></div>
+          <p>Choose a dependency failure and rerun the decision. Missing graph context never becomes “zero risk,” and missing evidence never becomes an invented explanation.</p>
+        </div>
+        <div class="trust-grid">
+          <aside class="failure-panel">
+            <label for="failureMode">Inject a failure</label>
+            <select id="failureMode"><option value="healthy">Healthy system</option><option value="model">Model timeout</option><option value="graph">Graph service timeout</option><option value="evidence">Evidence compiler unavailable</option><option value="identity">Missing device/address identity</option><option value="drift">PSI outside operating boundary</option><option value="out_of_order">Out-of-order Razorpay event</option><option value="duplicate">Duplicate webhook replay</option><option value="tampered">Tampered webhook signature</option></select>
+            <p id="failureDescription">All model, graph, evidence and policy services are available.</p>
+            <button id="rerunButton" class="button primary">Rerun agent decision</button>
+          </aside>
+          <article class="trace-panel"><div class="panel-head"><div><span>Agent tool trace</span><small>No hidden chain-of-thought; only observable actions</small></div></div><div id="toolTrace" class="tool-trace"></div></article>
+          <article class="audit-panel"><span>AUDIT RECEIPT</span><strong id="auditStatus">No action yet</strong><p id="auditHash" class="mono">—</p><small>SHA-256 hash chain · previous record linked</small><button id="verifyAuditButton" class="mini-button">Verify entire chain</button></article>
+        </div>
+        <div class="razorpay-proof"><div><span>REAL RAZORPAY TEST-MODE PROBE</span><strong>Orders API authenticated</strong><p>₹1 order <b>order_TSw6GD142V6cCF</b> created via the official endpoint. Keys remain outside the repository.</p></div><div><span>WEBHOOK ADAPTER</span><strong id="razorpayWebhookState">Checking configuration…</strong><p>Raw-body HMAC-SHA256, event-ID deduplication, and monotonic payment state are implemented. API-key secret and webhook secret are deliberately separate.</p></div><div><span>MODEL FEATURE CONTRACT</span><strong id="featureContractState">Checking score eligibility…</strong><p id="featureContractText">Gateway authenticity and model eligibility are independent gates.</p></div></div>
+      </section>
+
+    </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
