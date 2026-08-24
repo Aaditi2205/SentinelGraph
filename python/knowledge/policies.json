@@ -1,0 +1,74 @@
+[
+  {
+    "id": "POL-01",
+    "title": "Minimum expected loss",
+    "text": "Choose only among merchant-permitted actions and select the action with the lowest expected financial cost under the current configuration.",
+    "tags": ["allow", "review", "hold", "expected cost", "merchant authority"]
+  },
+  {
+    "id": "POL-02",
+    "title": "Model outage",
+    "text": "When the primary risk score is unavailable, do not interpret missing evidence as low risk and do not issue an automatic hold; route the case to review.",
+    "tags": ["model timeout", "unavailable", "degraded", "review"]
+  },
+  {
+    "id": "POL-03",
+    "title": "Distribution drift",
+    "text": "When input drift exceeds the validated operating envelope, pause automated decisions and require review until model performance is revalidated.",
+    "tags": ["drift", "psi", "distribution", "review", "monitoring"]
+  },
+  {
+    "id": "POL-04",
+    "title": "Evidence integrity",
+    "text": "An explanation may reference only validated model evidence; when explanation evidence is unavailable, display a deterministic fallback without changing the risk decision.",
+    "tags": ["evidence", "explanation", "grounding", "fallback"]
+  },
+  {
+    "id": "POL-05",
+    "title": "Temporary hold boundary",
+    "text": "A temporary hold is permitted only when its estimated legitimate-customer cost is lower than both expected fraud loss and the cost-adjusted review path.",
+    "tags": ["hold", "false positive", "customer friction", "bounded"]
+  },
+  {
+    "id": "POL-06",
+    "title": "Human review boundary",
+    "text": "Use human review when uncertainty makes analyst cost lower than both automatic alternatives, preserving a human decision for ambiguous cases.",
+    "tags": ["review", "uncertainty", "human in the loop"]
+  },
+  {
+    "id": "POL-07",
+    "title": "Shared-entity containment",
+    "text": "The agent may contain individual transactions only. Blocking a shared card profile, device, address, account, or identity requires explicit analyst approval because shared infrastructure can connect unrelated legitimate customers.",
+    "tags": ["entity block", "device", "identity", "blast radius", "analyst approval", "permission"]
+  },
+  {
+    "id": "POL-08",
+    "title": "Temporal evidence boundary",
+    "text": "A transaction may use only entity and outcome information available before its event time; current-event and future labels are prohibited from scoring features.",
+    "tags": ["temporal", "leakage", "future", "label delay", "past only"]
+  },
+  {
+    "id": "POL-09",
+    "title": "Graph dependency outage",
+    "text": "When relational context is unavailable, ring-level containment must stop. Transaction-only evidence may triage a case but may not authorize a graph-dependent hold.",
+    "tags": ["graph timeout", "relational evidence", "degraded", "review", "containment"]
+  },
+  {
+    "id": "POL-10",
+    "title": "Webhook authenticity",
+    "text": "Reject an event before model inference when its message authentication code does not match the received body. Unauthenticated events must never enter feature state.",
+    "tags": ["hmac", "signature", "tampered", "webhook", "authenticity"]
+  },
+  {
+    "id": "POL-11",
+    "title": "Replay protection",
+    "text": "Process each external event identifier at most once. A duplicate event returns the recorded receipt and must not mutate graph state or repeat a financial action.",
+    "tags": ["duplicate", "idempotency", "replay", "webhook", "event id"]
+  },
+  {
+    "id": "POL-12",
+    "title": "Graph counterfactual language",
+    "text": "Mask-and-rescore results describe local model sensitivity only. They must not be described as causal proof that an entity or relationship caused fraud.",
+    "tags": ["counterfactual", "sensitivity", "causal", "explanation", "graph"]
+  }
+]
