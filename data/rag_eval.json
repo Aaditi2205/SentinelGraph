@@ -1,0 +1,131 @@
+{
+  "cases": 12,
+  "topK": 3,
+  "recallAtK": 1.0,
+  "meanReciprocalRank": 0.9444444444444445,
+  "retrievalMethod": "word/bigram TF-IDF + BM25 score fusion",
+  "datasetType": "hand-labelled policy-routing queries including a prompt-injection-style case",
+  "limitation": "Small developer-authored routing set; not an independent corpus of real analyst questions.",
+  "rows": [
+    {
+      "id": "E01",
+      "expected": "POL-01",
+      "retrieved": [
+        "POL-01",
+        "POL-05",
+        "POL-11"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E02",
+      "expected": "POL-02",
+      "retrieved": [
+        "POL-12",
+        "POL-04",
+        "POL-02"
+      ],
+      "rank": 3
+    },
+    {
+      "id": "E03",
+      "expected": "POL-03",
+      "retrieved": [
+        "POL-03",
+        "POL-04",
+        "POL-05"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E04",
+      "expected": "POL-04",
+      "retrieved": [
+        "POL-04",
+        "POL-02",
+        "POL-09"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E05",
+      "expected": "POL-05",
+      "retrieved": [
+        "POL-05",
+        "POL-08",
+        "POL-06"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E06",
+      "expected": "POL-06",
+      "retrieved": [
+        "POL-06",
+        "POL-05",
+        "POL-07"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E07",
+      "expected": "POL-07",
+      "retrieved": [
+        "POL-07",
+        "POL-05",
+        "POL-08"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E08",
+      "expected": "POL-08",
+      "retrieved": [
+        "POL-08",
+        "POL-10",
+        "POL-06"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E09",
+      "expected": "POL-09",
+      "retrieved": [
+        "POL-09",
+        "POL-02",
+        "POL-04"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E10",
+      "expected": "POL-10",
+      "retrieved": [
+        "POL-10",
+        "POL-11",
+        "POL-01"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E11",
+      "expected": "POL-11",
+      "retrieved": [
+        "POL-11",
+        "POL-08",
+        "POL-10"
+      ],
+      "rank": 1
+    },
+    {
+      "id": "E12",
+      "expected": "POL-12",
+      "retrieved": [
+        "POL-12",
+        "POL-10",
+        "POL-05"
+      ],
+      "rank": 1
+    }
+  ]
+}
