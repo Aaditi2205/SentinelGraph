@@ -1,0 +1,1195 @@
+{
+  "project": "SentinelGraph",
+  "dataset": {
+    "name": "IEEE-CIS Fraud Detection (Vesta)",
+    "rows": 590540,
+    "fraud_rows": 20663,
+    "test_rows": 88581,
+    "test_fraud_rows": 3083,
+    "test_fraud_prevalence": 0.03480430340592226,
+    "max_case_recall_at_1pct": 0.2870580603308466,
+    "identity_rows": 140872,
+    "split": "chronological 70/15/15",
+    "feedback_delay_hours": 24,
+    "source": "https://www.kaggle.com/competitions/ieee-fraud-detection/data",
+    "mirror": "https://www.kaggle.com/datasets/lnasiri007/ieeecis-fraud-detection"
+  },
+  "financial_units": {
+    "source_amount_field": "TransactionAmt",
+    "source_currency": "USD",
+    "policy_currency": "INR",
+    "usd_to_inr_rate": 83.0,
+    "assumption_locked_on": "2026-08-23",
+    "method": "Every source amount is multiplied by the fixed scenario rate before queue economics, policy costs, or UI display. The raw USD field remains the model input.",
+    "warning": "Scenario normalization only; not an observed per-transaction or historical market FX rate."
+  },
+  "ablations": [
+    {
+      "name": "Transaction model",
+      "average_precision": 0.44988604858048653,
+      "roc_auc": 0.8718010444950534,
+      "review_budget_pct": 1.0,
+      "reviewed": 885,
+      "precision": 0.8610169491525423,
+      "recall": 0.24716185533571197,
+      "fraud_count_caught": 762,
+      "fraud_count_total": 3083,
+      "false_positive_count": 123,
+      "false_positive_rate": 0.001438630143395167,
+      "false_positive_review_cost": 14760.0,
+      "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+      "fraud_value_captured": 4708605.188999999,
+      "fraud_value_total": 38977507.243,
+      "fraud_value_capture": 0.12080313806742018
+    },
+    {
+      "name": "Transaction + temporal graph",
+      "average_precision": 0.4575157767555855,
+      "roc_auc": 0.8806187122931449,
+      "review_budget_pct": 1.0,
+      "reviewed": 885,
+      "precision": 0.8576271186440678,
+      "recall": 0.24618877716509893,
+      "fraud_count_caught": 759,
+      "fraud_count_total": 3083,
+      "false_positive_count": 126,
+      "false_positive_rate": 0.001473718683477976,
+      "false_positive_review_cost": 15120.0,
+      "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+      "fraud_value_captured": 4608250.552999999,
+      "fraud_value_total": 38977507.243,
+      "fraud_value_capture": 0.11822845735799584
+    }
+  ],
+  "system_comparison": [
+    {
+      "name": "Amount-only merchant rule",
+      "kind": "deterministic rule",
+      "review_budget_pct": 1.0,
+      "reviewed": 885,
+      "precision": 0.02937853107344633,
+      "recall": 0.008433344145313007,
+      "fraud_count_caught": 26,
+      "fraud_count_total": 3083,
+      "false_positive_count": 859,
+      "false_positive_rate": 0.010047018643710964,
+      "false_positive_review_cost": 103080.0,
+      "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+      "fraud_value_captured": 3913034.17,
+      "fraud_value_total": 38977507.243,
+      "fraud_value_capture": 0.10039210936719778
+    },
+    {
+      "name": "Transaction model",
+      "kind": "calibrated ML",
+      "review_budget_pct": 1.0,
+      "reviewed": 885,
+      "precision": 0.8610169491525423,
+      "recall": 0.24716185533571197,
+      "fraud_count_caught": 762,
+      "fraud_count_total": 3083,
+      "false_positive_count": 123,
+      "false_positive_rate": 0.001438630143395167,
+      "false_positive_review_cost": 14760.0,
+      "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+      "fraud_value_captured": 4708605.188999999,
+      "fraud_value_total": 38977507.243,
+      "fraud_value_capture": 0.12080313806742018
+    },
+    {
+      "name": "Transaction + temporal graph",
+      "kind": "calibrated ML",
+      "review_budget_pct": 1.0,
+      "reviewed": 885,
+      "precision": 0.8576271186440678,
+      "recall": 0.24618877716509893,
+      "fraud_count_caught": 759,
+      "fraud_count_total": 3083,
+      "false_positive_count": 126,
+      "false_positive_rate": 0.001473718683477976,
+      "false_positive_review_cost": 15120.0,
+      "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+      "fraud_value_captured": 4608250.552999999,
+      "fraud_value_total": 38977507.243,
+      "fraud_value_capture": 0.11822845735799584
+    },
+    {
+      "name": "Expected-loss priority queue",
+      "kind": "graph risk \u00d7 rupee exposure",
+      "review_budget_pct": 1.0,
+      "reviewed": 885,
+      "precision": 0.44519774011299434,
+      "recall": 0.1277975997405125,
+      "fraud_count_caught": 394,
+      "fraud_count_total": 3083,
+      "false_positive_count": 491,
+      "false_positive_rate": 0.005742824393553066,
+      "false_positive_review_cost": 58920.0,
+      "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+      "fraud_value_captured": 13037415.485,
+      "fraud_value_total": 38977507.243,
+      "fraud_value_capture": 0.3344856150938539
+    }
+  ],
+  "review_frontier": [
+    {
+      "budget_pct": 0.25,
+      "transaction": {
+        "review_budget_pct": 0.25,
+        "reviewed": 221,
+        "precision": 0.8642533936651584,
+        "recall": 0.06195264352903017,
+        "fraud_count_caught": 191,
+        "fraud_count_total": 3083,
+        "false_positive_count": 30,
+        "false_positive_rate": 0.0003508854008280895,
+        "false_positive_review_cost": 3600.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 815379.4670000001,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.02091923072239143
+      },
+      "graph": {
+        "review_budget_pct": 0.25,
+        "reviewed": 221,
+        "precision": 0.9140271493212669,
+        "recall": 0.06552059682127798,
+        "fraud_count_caught": 202,
+        "fraud_count_total": 3083,
+        "false_positive_count": 19,
+        "false_positive_rate": 0.0002222274205244567,
+        "false_positive_review_cost": 2280.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 930054.674,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.023861317456801426
+      }
+    },
+    {
+      "budget_pct": 0.5,
+      "transaction": {
+        "review_budget_pct": 0.5,
+        "reviewed": 442,
+        "precision": 0.8574660633484162,
+        "recall": 0.1229322088874473,
+        "fraud_count_caught": 379,
+        "fraud_count_total": 3083,
+        "false_positive_count": 63,
+        "false_positive_rate": 0.000736859341738988,
+        "false_positive_review_cost": 7560.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 1961209.8219999997,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.0503164507102289
+      },
+      "graph": {
+        "review_budget_pct": 0.5,
+        "reviewed": 442,
+        "precision": 0.8665158371040724,
+        "recall": 0.12422964644826467,
+        "fraud_count_caught": 383,
+        "fraud_count_total": 3083,
+        "false_positive_count": 59,
+        "false_positive_rate": 0.0006900746216285761,
+        "false_positive_review_cost": 7080.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 1922586.1870000004,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.04932552959361656
+      }
+    },
+    {
+      "budget_pct": 1.0,
+      "transaction": {
+        "review_budget_pct": 1.0,
+        "reviewed": 885,
+        "precision": 0.8610169491525423,
+        "recall": 0.24716185533571197,
+        "fraud_count_caught": 762,
+        "fraud_count_total": 3083,
+        "false_positive_count": 123,
+        "false_positive_rate": 0.001438630143395167,
+        "false_positive_review_cost": 14760.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 4708605.188999999,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.12080313806742018
+      },
+      "graph": {
+        "review_budget_pct": 1.0,
+        "reviewed": 885,
+        "precision": 0.8576271186440678,
+        "recall": 0.24618877716509893,
+        "fraud_count_caught": 759,
+        "fraud_count_total": 3083,
+        "false_positive_count": 126,
+        "false_positive_rate": 0.001473718683477976,
+        "false_positive_review_cost": 15120.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 4608250.552999999,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.11822845735799584
+      }
+    },
+    {
+      "budget_pct": 2.0,
+      "transaction": {
+        "review_budget_pct": 2.0,
+        "reviewed": 1771,
+        "precision": 0.6521739130434783,
+        "recall": 0.3746350956860201,
+        "fraud_count_caught": 1155,
+        "fraud_count_total": 3083,
+        "false_positive_count": 616,
+        "false_positive_rate": 0.0072048468970034385,
+        "false_positive_review_cost": 73920.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 10330423.936999999,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.26503552093766203
+      },
+      "graph": {
+        "review_budget_pct": 2.0,
+        "reviewed": 1771,
+        "precision": 0.6730660643704122,
+        "recall": 0.38663639312358095,
+        "fraud_count_caught": 1192,
+        "fraud_count_total": 3083,
+        "false_positive_count": 579,
+        "false_positive_rate": 0.006772088235982128,
+        "false_positive_review_cost": 69480.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 10028901.122000001,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.25729970517293915
+      }
+    },
+    {
+      "budget_pct": 5.0,
+      "transaction": {
+        "review_budget_pct": 5.0,
+        "reviewed": 4429,
+        "precision": 0.359449085572364,
+        "recall": 0.5163801492053195,
+        "fraud_count_caught": 1592,
+        "fraud_count_total": 3083,
+        "false_positive_count": 2837,
+        "false_positive_rate": 0.03318206273830967,
+        "false_positive_review_cost": 340440.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 16182403.179000001,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.4151728605452626
+      },
+      "graph": {
+        "review_budget_pct": 5.0,
+        "reviewed": 4429,
+        "precision": 0.36170693158726575,
+        "recall": 0.5196237431073629,
+        "fraud_count_caught": 1602,
+        "fraud_count_total": 3083,
+        "false_positive_count": 2827,
+        "false_positive_rate": 0.03306510093803364,
+        "false_positive_review_cost": 339240.0,
+        "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+        "fraud_value_captured": 16834215.376000002,
+        "fraud_value_total": 38977507.243,
+        "fraud_value_capture": 0.4318956384524377
+      }
+    }
+  ],
+  "operational_queues": {
+    "risk_ranked": {
+      "review_budget_pct": 1.0,
+      "reviewed": 885,
+      "precision": 0.8576271186440678,
+      "recall": 0.24618877716509893,
+      "fraud_count_caught": 759,
+      "fraud_count_total": 3083,
+      "false_positive_count": 126,
+      "false_positive_rate": 0.001473718683477976,
+      "false_positive_review_cost": 15120.0,
+      "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+      "fraud_value_captured": 4608250.552999999,
+      "fraud_value_total": 38977507.243,
+      "fraud_value_capture": 0.11822845735799584
+    },
+    "expected_loss_ranked": {
+      "review_budget_pct": 1.0,
+      "reviewed": 885,
+      "precision": 0.44519774011299434,
+      "recall": 0.1277975997405125,
+      "fraud_count_caught": 394,
+      "fraud_count_total": 3083,
+      "false_positive_count": 491,
+      "false_positive_rate": 0.005742824393553066,
+      "false_positive_review_cost": 58920.0,
+      "false_positive_cost_assumption": "\u20b9120 analyst review cost per legitimate queued event",
+      "fraud_value_captured": 13037415.485,
+      "fraud_value_total": 38977507.243,
+      "fraud_value_capture": 0.3344856150938539
+    },
+    "priority_formula": "calibrated P(fraud) \u00d7 (transaction amount + \u20b91,500 chargeback fee)"
+  },
+  "merchant_policy_lab": {
+    "policies": [
+      {
+        "id": "growth",
+        "name": "Growth protection",
+        "description": "Protect legitimate conversion; interrupt only when expected fraud benefit clearly covers customer friction.",
+        "review_cost": 120.0,
+        "legitimate_friction_cost": 750.0,
+        "fraud_prevention_rate": 0.85,
+        "points": [
+          {
+            "capacity_pct": 0.25,
+            "baseline": {
+              "capacity_pct": 0.25,
+              "capacity_slots": 221,
+              "reviewed": 221,
+              "unused_slots": 0,
+              "fraud_count_caught": 110,
+              "fraud_count_total": 3083,
+              "precision": 0.497737556561086,
+              "false_positive_count": 111,
+              "fraud_exposure_prevented": 5131035.381050001,
+              "manual_review_cost": 26520.0,
+              "legitimate_friction_cost": 83250.0,
+              "merchant_value": 5021265.381050001
+            },
+            "graph": {
+              "capacity_pct": 0.25,
+              "capacity_slots": 221,
+              "reviewed": 221,
+              "unused_slots": 0,
+              "fraud_count_caught": 106,
+              "fraud_count_total": 3083,
+              "precision": 0.4796380090497738,
+              "false_positive_count": 115,
+              "fraud_exposure_prevented": 4665709.722700001,
+              "manual_review_cost": 26520.0,
+              "legitimate_friction_cost": 86250.0,
+              "merchant_value": 4552939.722700001
+            },
+            "recommended_model": "baseline",
+            "value_delta": -468325.65835000016
+          },
+          {
+            "capacity_pct": 0.5,
+            "baseline": {
+              "capacity_pct": 0.5,
+              "capacity_slots": 442,
+              "reviewed": 442,
+              "unused_slots": 0,
+              "fraud_count_caught": 210,
+              "fraud_count_total": 3083,
+              "precision": 0.4751131221719457,
+              "false_positive_count": 232,
+              "fraud_exposure_prevented": 7502417.49795,
+              "manual_review_cost": 53040.0,
+              "legitimate_friction_cost": 174000.0,
+              "merchant_value": 7275377.49795
+            },
+            "graph": {
+              "capacity_pct": 0.5,
+              "capacity_slots": 442,
+              "reviewed": 442,
+              "unused_slots": 0,
+              "fraud_count_caught": 217,
+              "fraud_count_total": 3083,
+              "precision": 0.49095022624434387,
+              "false_positive_count": 225,
+              "fraud_exposure_prevented": 7947978.846649999,
+              "manual_review_cost": 53040.0,
+              "legitimate_friction_cost": 168750.0,
+              "merchant_value": 7726188.846649999
+            },
+            "recommended_model": "graph",
+            "value_delta": 450811.34869999904
+          },
+          {
+            "capacity_pct": 1.0,
+            "baseline": {
+              "capacity_pct": 1.0,
+              "capacity_slots": 885,
+              "reviewed": 885,
+              "unused_slots": 0,
+              "fraud_count_caught": 373,
+              "fraud_count_total": 3083,
+              "precision": 0.4214689265536723,
+              "false_positive_count": 512,
+              "fraud_exposure_prevented": 10785225.062050002,
+              "manual_review_cost": 106200.0,
+              "legitimate_friction_cost": 384000.0,
+              "merchant_value": 10295025.062050002
+            },
+            "graph": {
+              "capacity_pct": 1.0,
+              "capacity_slots": 885,
+              "reviewed": 885,
+              "unused_slots": 0,
+              "fraud_count_caught": 404,
+              "fraud_count_total": 3083,
+              "precision": 0.45649717514124294,
+              "false_positive_count": 481,
+              "fraud_exposure_prevented": 11477852.5065,
+              "manual_review_cost": 106200.0,
+              "legitimate_friction_cost": 360750.0,
+              "merchant_value": 11010902.5065
+            },
+            "recommended_model": "graph",
+            "value_delta": 715877.4444499984
+          },
+          {
+            "capacity_pct": 2.0,
+            "baseline": {
+              "capacity_pct": 2.0,
+              "capacity_slots": 1771,
+              "reviewed": 1771,
+              "unused_slots": 0,
+              "fraud_count_caught": 658,
+              "fraud_count_total": 3083,
+              "precision": 0.3715415019762846,
+              "false_positive_count": 1113,
+              "fraud_exposure_prevented": 15883166.11555,
+              "manual_review_cost": 212520.0,
+              "legitimate_friction_cost": 834750.0,
+              "merchant_value": 14835896.11555
+            },
+            "graph": {
+              "capacity_pct": 2.0,
+              "capacity_slots": 1771,
+              "reviewed": 1771,
+              "unused_slots": 0,
+              "fraud_count_caught": 683,
+              "fraud_count_total": 3083,
+              "precision": 0.3856578204404291,
+              "false_positive_count": 1088,
+              "fraud_exposure_prevented": 15824430.92855,
+              "manual_review_cost": 212520.0,
+              "legitimate_friction_cost": 816000.0,
+              "merchant_value": 14795910.92855
+            },
+            "recommended_model": "baseline",
+            "value_delta": -39985.18700000085
+          },
+          {
+            "capacity_pct": 5.0,
+            "baseline": {
+              "capacity_pct": 5.0,
+              "capacity_slots": 4429,
+              "reviewed": 4429,
+              "unused_slots": 0,
+              "fraud_count_caught": 1388,
+              "fraud_count_total": 3083,
+              "precision": 0.31338902686836756,
+              "false_positive_count": 3041,
+              "fraud_exposure_prevented": 22629209.11685,
+              "manual_review_cost": 531480.0,
+              "legitimate_friction_cost": 2280750.0,
+              "merchant_value": 19816979.11685
+            },
+            "graph": {
+              "capacity_pct": 5.0,
+              "capacity_slots": 4429,
+              "reviewed": 4429,
+              "unused_slots": 0,
+              "fraud_count_caught": 1420,
+              "fraud_count_total": 3083,
+              "precision": 0.3206141341160533,
+              "false_positive_count": 3009,
+              "fraud_exposure_prevented": 22673326.166199997,
+              "manual_review_cost": 531480.0,
+              "legitimate_friction_cost": 2256750.0,
+              "merchant_value": 19885096.166199997
+            },
+            "recommended_model": "graph",
+            "value_delta": 68117.04934999719
+          }
+        ]
+      },
+      {
+        "id": "balanced",
+        "name": "Balanced operations",
+        "description": "Balance prevented fraud, analyst capacity, and the cost of interrupting a legitimate payment.",
+        "review_cost": 120.0,
+        "legitimate_friction_cost": 300.0,
+        "fraud_prevention_rate": 0.9,
+        "points": [
+          {
+            "capacity_pct": 0.25,
+            "baseline": {
+              "capacity_pct": 0.25,
+              "capacity_slots": 221,
+              "reviewed": 221,
+              "unused_slots": 0,
+              "fraud_count_caught": 109,
+              "fraud_count_total": 3083,
+              "precision": 0.49321266968325794,
+              "false_positive_count": 112,
+              "fraud_exposure_prevented": 5412277.3851,
+              "manual_review_cost": 26520.0,
+              "legitimate_friction_cost": 33600.0,
+              "merchant_value": 5352157.3851
+            },
+            "graph": {
+              "capacity_pct": 0.25,
+              "capacity_slots": 221,
+              "reviewed": 221,
+              "unused_slots": 0,
+              "fraud_count_caught": 105,
+              "fraud_count_total": 3083,
+              "precision": 0.4751131221719457,
+              "false_positive_count": 116,
+              "fraud_exposure_prevented": 4930521.5358,
+              "manual_review_cost": 26520.0,
+              "legitimate_friction_cost": 34800.0,
+              "merchant_value": 4869201.5358
+            },
+            "recommended_model": "baseline",
+            "value_delta": -482955.8492999999
+          },
+          {
+            "capacity_pct": 0.5,
+            "baseline": {
+              "capacity_pct": 0.5,
+              "capacity_slots": 442,
+              "reviewed": 442,
+              "unused_slots": 0,
+              "fraud_count_caught": 208,
+              "fraud_count_total": 3083,
+              "precision": 0.47058823529411764,
+              "false_positive_count": 234,
+              "fraud_exposure_prevented": 7902606.086999999,
+              "manual_review_cost": 53040.0,
+              "legitimate_friction_cost": 70200.0,
+              "merchant_value": 7779366.086999999
+            },
+            "graph": {
+              "capacity_pct": 0.5,
+              "capacity_slots": 442,
+              "reviewed": 442,
+              "unused_slots": 0,
+              "fraud_count_caught": 215,
+              "fraud_count_total": 3083,
+              "precision": 0.48642533936651583,
+              "false_positive_count": 227,
+              "fraud_exposure_prevented": 8382927.014099999,
+              "manual_review_cost": 53040.0,
+              "legitimate_friction_cost": 68100.0,
+              "merchant_value": 8261787.014099999
+            },
+            "recommended_model": "graph",
+            "value_delta": 482420.9271
+          },
+          {
+            "capacity_pct": 1.0,
+            "baseline": {
+              "capacity_pct": 1.0,
+              "capacity_slots": 885,
+              "reviewed": 885,
+              "unused_slots": 0,
+              "fraud_count_caught": 369,
+              "fraud_count_total": 3083,
+              "precision": 0.41694915254237286,
+              "false_positive_count": 516,
+              "fraud_exposure_prevented": 11425427.5014,
+              "manual_review_cost": 106200.0,
+              "legitimate_friction_cost": 154800.0,
+              "merchant_value": 11164427.5014
+            },
+            "graph": {
+              "capacity_pct": 1.0,
+              "capacity_slots": 885,
+              "reviewed": 885,
+              "unused_slots": 0,
+              "fraud_count_caught": 395,
+              "fraud_count_total": 3083,
+              "precision": 0.4463276836158192,
+              "false_positive_count": 490,
+              "fraud_exposure_prevented": 12238389.2088,
+              "manual_review_cost": 106200.0,
+              "legitimate_friction_cost": 147000.0,
+              "merchant_value": 11985189.2088
+            },
+            "recommended_model": "graph",
+            "value_delta": 820761.7073999997
+          },
+          {
+            "capacity_pct": 2.0,
+            "baseline": {
+              "capacity_pct": 2.0,
+              "capacity_slots": 1771,
+              "reviewed": 1771,
+              "unused_slots": 0,
+              "fraud_count_caught": 630,
+              "fraud_count_total": 3083,
+              "precision": 0.3557312252964427,
+              "false_positive_count": 1141,
+              "fraud_exposure_prevented": 16882963.0731,
+              "manual_review_cost": 212520.0,
+              "legitimate_friction_cost": 342300.0,
+              "merchant_value": 16328143.0731
+            },
+            "graph": {
+              "capacity_pct": 2.0,
+              "capacity_slots": 1771,
+              "reviewed": 1771,
+              "unused_slots": 0,
+              "fraud_count_caught": 662,
+              "fraud_count_total": 3083,
+              "precision": 0.3738001129305477,
+              "false_positive_count": 1109,
+              "fraud_exposure_prevented": 16907031.133199997,
+              "manual_review_cost": 212520.0,
+              "legitimate_friction_cost": 332700.0,
+              "merchant_value": 16361811.133199997
+            },
+            "recommended_model": "graph",
+            "value_delta": 33668.06009999663
+          },
+          {
+            "capacity_pct": 5.0,
+            "baseline": {
+              "capacity_pct": 5.0,
+              "capacity_slots": 4429,
+              "reviewed": 4429,
+              "unused_slots": 0,
+              "fraud_count_caught": 1304,
+              "fraud_count_total": 3083,
+              "precision": 0.29442312034319257,
+              "false_positive_count": 3125,
+              "fraud_exposure_prevented": 24094737.490500003,
+              "manual_review_cost": 531480.0,
+              "legitimate_friction_cost": 937500.0,
+              "merchant_value": 22625757.490500003
+            },
+            "graph": {
+              "capacity_pct": 5.0,
+              "capacity_slots": 4429,
+              "reviewed": 4429,
+              "unused_slots": 0,
+              "fraud_count_caught": 1361,
+              "fraud_count_total": 3083,
+              "precision": 0.3072928426281328,
+              "false_positive_count": 3068,
+              "fraud_exposure_prevented": 23994788.9265,
+              "manual_review_cost": 531480.0,
+              "legitimate_friction_cost": 920400.0,
+              "merchant_value": 22542908.9265
+            },
+            "recommended_model": "baseline",
+            "value_delta": -82848.56400000304
+          }
+        ]
+      },
+      {
+        "id": "loss_minimization",
+        "name": "Loss minimization",
+        "description": "Accept more customer friction when the merchant's current priority is reducing fraud exposure.",
+        "review_cost": 120.0,
+        "legitimate_friction_cost": 80.0,
+        "fraud_prevention_rate": 0.95,
+        "points": [
+          {
+            "capacity_pct": 0.25,
+            "baseline": {
+              "capacity_pct": 0.25,
+              "capacity_slots": 221,
+              "reviewed": 221,
+              "unused_slots": 0,
+              "fraud_count_caught": 107,
+              "fraud_count_total": 3083,
+              "precision": 0.4841628959276018,
+              "false_positive_count": 114,
+              "fraud_exposure_prevented": 5674626.962050002,
+              "manual_review_cost": 26520.0,
+              "legitimate_friction_cost": 9120.0,
+              "merchant_value": 5638986.962050002
+            },
+            "graph": {
+              "capacity_pct": 0.25,
+              "capacity_slots": 221,
+              "reviewed": 221,
+              "unused_slots": 0,
+              "fraud_count_caught": 105,
+              "fraud_count_total": 3083,
+              "precision": 0.4751131221719457,
+              "false_positive_count": 116,
+              "fraud_exposure_prevented": 5204439.3989,
+              "manual_review_cost": 26520.0,
+              "legitimate_friction_cost": 9280.0,
+              "merchant_value": 5168639.3989
+            },
+            "recommended_model": "baseline",
+            "value_delta": -470347.5631500017
+          },
+          {
+            "capacity_pct": 0.5,
+            "baseline": {
+              "capacity_pct": 0.5,
+              "capacity_slots": 442,
+              "reviewed": 442,
+              "unused_slots": 0,
+              "fraud_count_caught": 204,
+              "fraud_count_total": 3083,
+              "precision": 0.46153846153846156,
+              "false_positive_count": 238,
+              "fraud_exposure_prevented": 8421223.52425,
+              "manual_review_cost": 53040.0,
+              "legitimate_friction_cost": 19040.0,
+              "merchant_value": 8349143.524250001
+            },
+            "graph": {
+              "capacity_pct": 0.5,
+              "capacity_slots": 442,
+              "reviewed": 442,
+              "unused_slots": 0,
+              "fraud_count_caught": 210,
+              "fraud_count_total": 3083,
+              "precision": 0.4751131221719457,
+              "false_positive_count": 232,
+              "fraud_exposure_prevented": 8785820.147300001,
+              "manual_review_cost": 53040.0,
+              "legitimate_friction_cost": 18560.0,
+              "merchant_value": 8714220.147300001
+            },
+            "recommended_model": "graph",
+            "value_delta": 365076.6230500005
+          },
+          {
+            "capacity_pct": 1.0,
+            "baseline": {
+              "capacity_pct": 1.0,
+              "capacity_slots": 885,
+              "reviewed": 885,
+              "unused_slots": 0,
+              "fraud_count_caught": 366,
+              "fraud_count_total": 3083,
+              "precision": 0.4135593220338983,
+              "false_positive_count": 519,
+              "fraud_exposure_prevented": 12090405.9146,
+              "manual_review_cost": 106200.0,
+              "legitimate_friction_cost": 41520.0,
+              "merchant_value": 11942685.9146
+            },
+            "graph": {
+              "capacity_pct": 1.0,
+              "capacity_slots": 885,
+              "reviewed": 885,
+              "unused_slots": 0,
+              "fraud_count_caught": 394,
+              "fraud_count_total": 3083,
+              "precision": 0.44519774011299434,
+              "false_positive_count": 491,
+              "fraud_exposure_prevented": 12910039.45045,
+              "manual_review_cost": 106200.0,
+              "legitimate_friction_cost": 39280.0,
+              "merchant_value": 12764559.45045
+            },
+            "recommended_model": "graph",
+            "value_delta": 821873.5358499996
+          },
+          {
+            "capacity_pct": 2.0,
+            "baseline": {
+              "capacity_pct": 2.0,
+              "capacity_slots": 1771,
+              "reviewed": 1771,
+              "unused_slots": 0,
+              "fraud_count_caught": 630,
+              "fraud_count_total": 3083,
+              "precision": 0.3557312252964427,
+              "false_positive_count": 1141,
+              "fraud_exposure_prevented": 17868792.96345,
+              "manual_review_cost": 212520.0,
+              "legitimate_friction_cost": 91280.0,
+              "merchant_value": 17564992.96345
+            },
+            "graph": {
+              "capacity_pct": 2.0,
+              "capacity_slots": 1771,
+              "reviewed": 1771,
+              "unused_slots": 0,
+              "fraud_count_caught": 650,
+              "fraud_count_total": 3083,
+              "precision": 0.36702428006775834,
+              "false_positive_count": 1121,
+              "fraud_exposure_prevented": 17944712.24955,
+              "manual_review_cost": 212520.0,
+              "legitimate_friction_cost": 89680.0,
+              "merchant_value": 17642512.24955
+            },
+            "recommended_model": "graph",
+            "value_delta": 77519.28610000014
+          },
+          {
+            "capacity_pct": 5.0,
+            "baseline": {
+              "capacity_pct": 5.0,
+              "capacity_slots": 4429,
+              "reviewed": 4429,
+              "unused_slots": 0,
+              "fraud_count_caught": 1296,
+              "fraud_count_total": 3083,
+              "precision": 0.29261684353127115,
+              "false_positive_count": 3133,
+              "fraud_exposure_prevented": 25570414.08725,
+              "manual_review_cost": 531480.0,
+              "legitimate_friction_cost": 250640.0,
+              "merchant_value": 24788294.08725
+            },
+            "graph": {
+              "capacity_pct": 5.0,
+              "capacity_slots": 4429,
+              "reviewed": 4429,
+              "unused_slots": 0,
+              "fraud_count_caught": 1321,
+              "fraud_count_total": 3083,
+              "precision": 0.29826145856852565,
+              "false_positive_count": 3108,
+              "fraud_exposure_prevented": 25260416.7496,
+              "manual_review_cost": 531480.0,
+              "legitimate_friction_cost": 248640.0,
+              "merchant_value": 24480296.7496
+            },
+            "recommended_model": "baseline",
+            "value_delta": -307997.33765000105
+          }
+        ]
+      }
+    ],
+    "value_formula": "fraud exposure prevented \u2212 manual review cost \u2212 legitimate-customer friction cost",
+    "queue_formula": "P(fraud) \u00d7 exposure \u00d7 prevention rate \u2212 review cost \u2212 (1\u2212P(fraud)) \u00d7 friction cost",
+    "status": "scenario evaluation on locked outcomes; not claimed realized savings"
+  },
+  "cold_start_evaluation": {
+    "threshold_scope": "one global graph-model threshold selecting the top 1% of the full chronological test stream",
+    "definition": "Unseen means prior_count = 0 before the event is inserted. Missing device identity is reported separately.",
+    "buckets": [
+      {
+        "id": "known_card_known_device",
+        "label": "Known card + known device",
+        "rows": 5605,
+        "frauds": 497,
+        "reviewed": 251,
+        "precision": 0.8924302788844621,
+        "recall": 0.4507042253521127,
+        "average_precision": 0.7028442761695282,
+        "exposure_capture": 0.37166029438788173
+      },
+      {
+        "id": "known_card_new_device",
+        "label": "Known card + unseen device",
+        "rows": 12260,
+        "frauds": 1205,
+        "reviewed": 600,
+        "precision": 0.8383333333333334,
+        "recall": 0.4174273858921162,
+        "average_precision": 0.6725630289282709,
+        "exposure_capture": 0.3749168892333599
+      },
+      {
+        "id": "new_card_known_device",
+        "label": "Unseen card + known device",
+        "rows": 84,
+        "frauds": 8,
+        "reviewed": 4,
+        "precision": 1.0,
+        "recall": 0.5,
+        "average_precision": 0.909375,
+        "exposure_capture": 0.4840466470183037
+      },
+      {
+        "id": "new_card_new_device",
+        "label": "Unseen card + unseen device",
+        "rows": 249,
+        "frauds": 22,
+        "reviewed": 16,
+        "precision": 0.9375,
+        "recall": 0.6818181818181818,
+        "average_precision": 0.7450779049338977,
+        "exposure_capture": 0.8258270273971933
+      },
+      {
+        "id": "missing_device",
+        "label": "Missing device identity",
+        "rows": 70383,
+        "frauds": 1351,
+        "reviewed": 14,
+        "precision": 0.9285714285714286,
+        "recall": 0.009622501850481125,
+        "average_precision": 0.11339229167369634,
+        "exposure_capture": 0.004261072624285003
+      }
+    ]
+  },
+  "graph_rescue_evidence": {
+    "definition": "Resolved held-out frauds with transaction-only risk \u226425%, graph risk \u226530%, component pressure \u22654, and at least one prior device-card relationship; examples are separated by at least six dataset-hours where possible.",
+    "examples": [
+      {
+        "id": "GR-01",
+        "transaction_id": "TX-3518332",
+        "dataset_elapsed_second": 13988184,
+        "source_amount_usd": 600.0,
+        "scenario_amount_inr": 49800.0,
+        "transaction_risk": 0.07828282828282827,
+        "graph_risk": 0.3684210526315789,
+        "risk_lift_pp": 29.013822434875063,
+        "transaction_action": "review",
+        "graph_action": "review",
+        "evidence": [
+          "component pressure 302",
+          "device linked to 1 prior card profiles",
+          "card had 1 events in the prior hour",
+          "233 delayed-confirmed fraud neighbours available at score time"
+        ],
+        "outcome": "fraud",
+        "queue_result": "transaction-only risk was at or below 25%; past-only graph risk crossed the predeclared 30% investigation boundary"
+      },
+      {
+        "id": "GR-02",
+        "transaction_id": "TX-3571111",
+        "dataset_elapsed_second": 15619077,
+        "source_amount_usd": 20.0,
+        "scenario_amount_inr": 1660.0,
+        "transaction_risk": 0.13795180722891562,
+        "graph_risk": 0.3944954128440367,
+        "risk_lift_pp": 25.654360561512114,
+        "transaction_action": "review",
+        "graph_action": "review",
+        "evidence": [
+          "component pressure 1515",
+          "device linked to 1 prior card profiles",
+          "card had 2 events in the prior hour",
+          "823 delayed-confirmed fraud neighbours available at score time"
+        ],
+        "outcome": "fraud",
+        "queue_result": "transaction-only risk was at or below 25%; past-only graph risk crossed the predeclared 30% investigation boundary"
+      },
+      {
+        "id": "GR-03",
+        "transaction_id": "TX-3572470",
+        "dataset_elapsed_second": 15648635,
+        "source_amount_usd": 100.0,
+        "scenario_amount_inr": 8300.0,
+        "transaction_risk": 0.15126050420168066,
+        "graph_risk": 0.3273809523809524,
+        "risk_lift_pp": 17.61204481792717,
+        "transaction_action": "review",
+        "graph_action": "review",
+        "evidence": [
+          "component pressure 723",
+          "device linked to 1 prior card profiles",
+          "card had 2 events in the prior hour",
+          "298 delayed-confirmed fraud neighbours available at score time"
+        ],
+        "outcome": "fraud",
+        "queue_result": "transaction-only risk was at or below 25%; past-only graph risk crossed the predeclared 30% investigation boundary"
+      },
+      {
+        "id": "GR-04",
+        "transaction_id": "TX-3563356",
+        "dataset_elapsed_second": 15320207,
+        "source_amount_usd": 150.0,
+        "scenario_amount_inr": 12450.0,
+        "transaction_risk": 0.15126050420168066,
+        "graph_risk": 0.30052724077328646,
+        "risk_lift_pp": 14.92667365716058,
+        "transaction_action": "review",
+        "graph_action": "review",
+        "evidence": [
+          "component pressure 536",
+          "device linked to 2 prior card profiles",
+          "card had 0 events in the prior hour",
+          "152 delayed-confirmed fraud neighbours available at score time"
+        ],
+        "outcome": "fraud",
+        "queue_result": "transaction-only risk was at or below 25%; past-only graph risk crossed the predeclared 30% investigation boundary"
+      },
+      {
+        "id": "GR-05",
+        "transaction_id": "TX-3548469",
+        "dataset_elapsed_second": 14863152,
+        "source_amount_usd": 450.0,
+        "scenario_amount_inr": 37350.0,
+        "transaction_risk": 0.1903765690376569,
+        "graph_risk": 0.30052724077328646,
+        "risk_lift_pp": 11.015067173562956,
+        "transaction_action": "review",
+        "graph_action": "review",
+        "evidence": [
+          "component pressure 1354",
+          "device linked to 1 prior card profiles",
+          "card had 0 events in the prior hour",
+          "548 delayed-confirmed fraud neighbours available at score time"
+        ],
+        "outcome": "fraud",
+        "queue_result": "transaction-only risk was at or below 25%; past-only graph risk crossed the predeclared 30% investigation boundary"
+      }
+    ],
+    "graph_noise_case": {
+      "transaction_id": "TX-3516590",
+      "scenario_amount_inr": 37350.0,
+      "transaction_risk": 0.7352941176470589,
+      "graph_risk": 0.8333333333333334,
+      "outcome": "legitimate",
+      "verdict": "Graph context added noise here. Keep the graph as a challenger, not an unquestioned authority."
+    }
+  },
+  "ap_delta_ci_95": [
+    -0.0014320369570720727,
+    0.017080046704555103
+  ],
+  "graph_queue_ci_95": {
+    "recall": [
+      0.23106117794576508,
+      0.26239053886921376
+    ],
+    "precision": [
+      0.7909039548022598,
+      0.9158474576271186
+    ],
+    "fraud_value_capture": [
+      0.09742678439352051,
+      0.1448873645370835
+    ]
+  },
+  "uncertainty_method": {
+    "name": "paired moving-block bootstrap",
+    "block_size_events": 1024,
+    "ap_delta_draws": 500,
+    "operating_point_draws": 300,
+    "why": "Contiguous event blocks preserve local temporal clustering that an IID row bootstrap would erase.",
+    "limit": "This quantifies sampling uncertainty within the IEEE-CIS test period, not transfer to Indian payment traffic."
+  },
+  "fixed_fpr": {
+    "transaction": [
+      {
+        "target_fpr": 0.005,
+        "validation_threshold": 0.33905579399141633,
+        "test_fpr": 0.008210718379377296,
+        "precision": 0.6289640591966174,
+        "recall": 0.3859876743431722,
+        "flagged": 1892
+      },
+      {
+        "target_fpr": 0.01,
+        "validation_threshold": 0.28947368421052627,
+        "test_fpr": 0.012982759830639313,
+        "precision": 0.5415117719950434,
+        "recall": 0.4252351605578982,
+        "flagged": 2421
+      }
+    ],
+    "graph": [
+      {
+        "target_fpr": 0.005,
+        "validation_threshold": 0.3333333333333333,
+        "test_fpr": 0.0054855084329458,
+        "precision": 0.7077881619937695,
+        "recall": 0.36847226727213755,
+        "flagged": 1605
+      },
+      {
+        "target_fpr": 0.01,
+        "validation_threshold": 0.30052724077328646,
+        "test_fpr": 0.012058761608458677,
+        "precision": 0.5616496598639455,
+        "recall": 0.4284787544599416,
+        "flagged": 2352
+      }
+    ]
+  },
+  "drift": {
+    "status": "pause",
+    "max_psi": 0.5037167699582544,
+    "features": [
+      {
+        "feature": "component_pressure",
+        "psi": 0.5037167699582544,
+        "status": "pause",
+        "kind": "rolling/rate graph feature"
+      },
+      {
+        "feature": "confirmed_fraud_ratio",
+        "psi": 0.045049210813887734,
+        "status": "stable",
+        "kind": "rolling/rate graph feature"
+      },
+      {
+        "feature": "device_recent_1h",
+        "psi": 0.01293486140426985,
+        "status": "stable",
+        "kind": "rolling/rate graph feature"
+      },
+      {
+        "feature": "card_recent_1h",
+        "psi": 0.005665698900456519,
+        "status": "stable",
+        "kind": "rolling/rate graph feature"
+      },
+      {
+        "feature": "new_card_device_link",
+        "psi": 0.004750180447464488,
+        "status": "stable",
+        "kind": "rolling/rate graph feature"
+      },
+      {
+        "feature": "address_recent_1h",
+        "psi": 0.003110915464740962,
+        "status": "stable",
+        "kind": "rolling/rate graph feature"
+      },
+      {
+        "feature": "entity_novelty",
+        "psi": 0.0019373747674656097,
+        "status": "stable",
+        "kind": "rolling/rate graph feature"
+      },
+      {
+        "feature": "calibrated_graph_risk",
+        "psi": 0.001727676857616821,
+        "status": "stable",
+        "kind": "model output"
+      }
+    ],
+    "boundary": "PSI <0.10 stable; 0.10\u20130.25 watch; \u22650.25 pause automated action",
+    "reference": "middle 15% chronological validation",
+    "current": "final 15% chronological test",
+    "exclusions": "Monotonic lifetime counters and distinct-entity totals are excluded because graph aging creates mechanical drift."
+  },
+  "latency": {
+    "inference": {
+      "batch_size": 128,
+      "p50_batch_ms": 2.1741000236943364,
+      "p95_batch_ms": 3.2109549734741445,
+      "p95_per_event_ms": 0.025085585730266754,
+      "environment": "local CPU; model + calibration only; excludes HTTP and feature assembly"
+    },
+    "graph_feature_build_seconds": 42.94392289989628,
+    "graph_rows_per_second": 13751.421857210587
+  },
+  "fraud_value_missed_at_1pct": {
+    "risk_ranked": 34369256.69,
+    "expected_loss_ranked": 25940091.758
+  },
+  "policy": {
+    "estimated_realized_cost": 10083245.919779904,
+    "action_counts": {
+      "allow": 55880,
+      "review": 31379,
+      "hold": 1322
+    },
+    "legitimate_gmv_held": 2259466.504000002,
+    "fraud_value_allowed": 2091881.1210000042,
+    "assumption": "Review prevents 90% of fraud; hold cost is 12% of amount plus \u20b9250 friction."
+  },
+  "limitations": [
+    "IEEE-CIS is real anonymized Vesta e-commerce data, but it is not specifically Indian payment traffic.",
+    "TransactionAmt is source USD. INR exposure is a fixed-rate scenario normalization, not observed loss, prevented loss, recovered revenue, or historical FX.",
+    "Card, address, and identity fields are anonymized; the product does not invent their hidden semantics.",
+    "Confirmed-neighbour features assume a conservative 24-hour label-availability delay.",
+    "The public mirror reproduces competition files but lists no license; production use requires confirming data rights."
+  ]
+}

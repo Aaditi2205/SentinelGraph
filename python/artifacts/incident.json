@@ -1,0 +1,467 @@
+{
+  "incidentId": "SG-INC-042",
+  "title": "Emerging multi-card abuse ring",
+  "targetTransaction": "TX-3518332",
+  "nodes": [
+    {
+      "id": "TX-3517730",
+      "kind": "transaction",
+      "label": "\u20b92,407",
+      "truth": "legitimate",
+      "isTarget": false
+    },
+    {
+      "id": "card_9df2ce2",
+      "kind": "card",
+      "label": "card_9df2ce2"
+    },
+    {
+      "id": "addr_1cde6e9",
+      "kind": "address",
+      "label": "addr_1cde6e9"
+    },
+    {
+      "id": "TX-3517758",
+      "kind": "transaction",
+      "label": "\u20b910,375",
+      "truth": "legitimate",
+      "isTarget": false
+    },
+    {
+      "id": "card_bbbfe4b",
+      "kind": "card",
+      "label": "card_bbbfe4b"
+    },
+    {
+      "id": "identity_a010f0a",
+      "kind": "device",
+      "label": "identity_a010f0a"
+    },
+    {
+      "id": "addr_ebe0256",
+      "kind": "address",
+      "label": "addr_ebe0256"
+    },
+    {
+      "id": "TX-3517802",
+      "kind": "transaction",
+      "label": "\u20b916,600",
+      "truth": "legitimate",
+      "isTarget": false
+    },
+    {
+      "id": "identity_0c30b3f",
+      "kind": "device",
+      "label": "identity_0c30b3f"
+    },
+    {
+      "id": "addr_23b51cc",
+      "kind": "address",
+      "label": "addr_23b51cc"
+    },
+    {
+      "id": "TX-3517971",
+      "kind": "transaction",
+      "label": "\u20b968,471",
+      "truth": "legitimate",
+      "isTarget": false
+    },
+    {
+      "id": "addr_4ffa3a7",
+      "kind": "address",
+      "label": "addr_4ffa3a7"
+    },
+    {
+      "id": "TX-3518068",
+      "kind": "transaction",
+      "label": "\u20b912,118",
+      "truth": "legitimate",
+      "isTarget": false
+    },
+    {
+      "id": "card_8807c6e",
+      "kind": "card",
+      "label": "card_8807c6e"
+    },
+    {
+      "id": "TX-3518101",
+      "kind": "transaction",
+      "label": "\u20b914,193",
+      "truth": "legitimate",
+      "isTarget": false
+    },
+    {
+      "id": "card_73942ab",
+      "kind": "card",
+      "label": "card_73942ab"
+    },
+    {
+      "id": "TX-3518275",
+      "kind": "transaction",
+      "label": "\u20b94,150",
+      "truth": "legitimate",
+      "isTarget": false
+    },
+    {
+      "id": "identity_88756f3",
+      "kind": "device",
+      "label": "identity_88756f3"
+    },
+    {
+      "id": "addr_2d10a60",
+      "kind": "address",
+      "label": "addr_2d10a60"
+    },
+    {
+      "id": "TX-3518332",
+      "kind": "transaction",
+      "label": "\u20b949,800",
+      "truth": "fraud",
+      "isTarget": true
+    },
+    {
+      "id": "identity_2e24644",
+      "kind": "device",
+      "label": "identity_2e24644"
+    }
+  ],
+  "edges": [
+    {
+      "source": "TX-3517730",
+      "target": "card_9df2ce2",
+      "type": "card"
+    },
+    {
+      "source": "TX-3517730",
+      "target": "addr_1cde6e9",
+      "type": "address"
+    },
+    {
+      "source": "TX-3517758",
+      "target": "card_bbbfe4b",
+      "type": "card"
+    },
+    {
+      "source": "TX-3517758",
+      "target": "identity_a010f0a",
+      "type": "device"
+    },
+    {
+      "source": "TX-3517758",
+      "target": "addr_ebe0256",
+      "type": "address"
+    },
+    {
+      "source": "TX-3517802",
+      "target": "card_bbbfe4b",
+      "type": "card"
+    },
+    {
+      "source": "TX-3517802",
+      "target": "identity_0c30b3f",
+      "type": "device"
+    },
+    {
+      "source": "TX-3517802",
+      "target": "addr_23b51cc",
+      "type": "address"
+    },
+    {
+      "source": "TX-3517971",
+      "target": "card_bbbfe4b",
+      "type": "card"
+    },
+    {
+      "source": "TX-3517971",
+      "target": "addr_4ffa3a7",
+      "type": "address"
+    },
+    {
+      "source": "TX-3518068",
+      "target": "card_8807c6e",
+      "type": "card"
+    },
+    {
+      "source": "TX-3518068",
+      "target": "addr_1cde6e9",
+      "type": "address"
+    },
+    {
+      "source": "TX-3518101",
+      "target": "card_73942ab",
+      "type": "card"
+    },
+    {
+      "source": "TX-3518101",
+      "target": "addr_1cde6e9",
+      "type": "address"
+    },
+    {
+      "source": "TX-3518275",
+      "target": "card_bbbfe4b",
+      "type": "card"
+    },
+    {
+      "source": "TX-3518275",
+      "target": "identity_88756f3",
+      "type": "device"
+    },
+    {
+      "source": "TX-3518275",
+      "target": "addr_2d10a60",
+      "type": "address"
+    },
+    {
+      "source": "TX-3518332",
+      "target": "card_bbbfe4b",
+      "type": "card"
+    },
+    {
+      "source": "TX-3518332",
+      "target": "identity_2e24644",
+      "type": "device"
+    },
+    {
+      "source": "TX-3518332",
+      "target": "addr_1cde6e9",
+      "type": "address"
+    }
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "transactionId": "TX-3517730",
+      "amount": 2407.0,
+      "sourceAmountUsd": 29.0,
+      "offsetMinutes": 0.0,
+      "transactionRisk": 0.027710042119264023,
+      "ringRisk": 0.008875477056891807,
+      "truth": "legitimate",
+      "evidenceIds": [
+        "EV-CARD-2ce2",
+        "EV-ADDRESS-e6e9"
+      ]
+    },
+    {
+      "sequence": 2,
+      "transactionId": "TX-3517758",
+      "amount": 10375.0,
+      "sourceAmountUsd": 125.0,
+      "offsetMinutes": 6.8,
+      "transactionRisk": 0.02007383479464698,
+      "ringRisk": 0.015273902188280224,
+      "truth": "legitimate",
+      "evidenceIds": [
+        "EV-CARD-fe4b",
+        "EV-DEVICE-0f0a",
+        "EV-ADDRESS-0256"
+      ]
+    },
+    {
+      "sequence": 3,
+      "transactionId": "TX-3517802",
+      "amount": 16600.0,
+      "sourceAmountUsd": 200.0,
+      "offsetMinutes": 18.6,
+      "transactionRisk": 0.007078957604045119,
+      "ringRisk": 0.008587786259541985,
+      "truth": "legitimate",
+      "evidenceIds": [
+        "EV-CARD-fe4b",
+        "EV-DEVICE-0b3f",
+        "EV-ADDRESS-51cc"
+      ]
+    },
+    {
+      "sequence": 4,
+      "transactionId": "TX-3517971",
+      "amount": 68470.85,
+      "sourceAmountUsd": 824.95,
+      "offsetMinutes": 73.2,
+      "transactionRisk": 0.01217948717948718,
+      "ringRisk": 0.0031926214969847464,
+      "truth": "legitimate",
+      "evidenceIds": [
+        "EV-CARD-fe4b",
+        "EV-ADDRESS-a3a7"
+      ]
+    },
+    {
+      "sequence": 5,
+      "transactionId": "TX-3518068",
+      "amount": 12118.0,
+      "sourceAmountUsd": 146.0,
+      "offsetMinutes": 103.7,
+      "transactionRisk": 0.03483043079743356,
+      "ringRisk": 0.03561643835616438,
+      "truth": "legitimate",
+      "evidenceIds": [
+        "EV-CARD-7c6e",
+        "EV-ADDRESS-e6e9"
+      ]
+    },
+    {
+      "sequence": 6,
+      "transactionId": "TX-3518101",
+      "amount": 14193.0,
+      "sourceAmountUsd": 171.0,
+      "offsetMinutes": 115.4,
+      "transactionRisk": 0.004975124378109453,
+      "ringRisk": 0.008875477056891807,
+      "truth": "legitimate",
+      "evidenceIds": [
+        "EV-CARD-42ab",
+        "EV-ADDRESS-e6e9"
+      ]
+    },
+    {
+      "sequence": 7,
+      "transactionId": "TX-3518275",
+      "amount": 4150.0,
+      "sourceAmountUsd": 50.0,
+      "offsetMinutes": 172.9,
+      "transactionRisk": 0.0028829521429944265,
+      "ringRisk": 0.002181208053691275,
+      "truth": "legitimate",
+      "evidenceIds": [
+        "EV-CARD-fe4b",
+        "EV-DEVICE-56f3",
+        "EV-ADDRESS-0a60"
+      ]
+    },
+    {
+      "sequence": 8,
+      "transactionId": "TX-3518332",
+      "amount": 49800.0,
+      "sourceAmountUsd": 600.0,
+      "offsetMinutes": 193.4,
+      "transactionRisk": 0.07828282828282827,
+      "ringRisk": 0.3684210526315789,
+      "truth": "fraud",
+      "evidenceIds": [
+        "EV-CARD-fe4b",
+        "EV-DEVICE-4644",
+        "EV-ADDRESS-e6e9"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "EV-RING-01",
+      "text": "The connected subgraph contains 8 transactions and 13 linked entities."
+    },
+    {
+      "id": "EV-RING-02",
+      "text": "The device had already appeared with 1 other card profiles before this payment."
+    },
+    {
+      "id": "EV-RING-03",
+      "text": "Graph context changed calibrated risk from 7.8% to 36.8%."
+    },
+    {
+      "id": "EV-RING-04",
+      "text": "The prior one-hour component pressure score was 302."
+    }
+  ],
+  "graphCounterfactuals": [
+    {
+      "removed": "card connection",
+      "riskAfterRemoval": 0.30052724077328646,
+      "riskDeltaPp": 6.789381185829246,
+      "rawScoreAfterRemoval": 0.8521987214635901,
+      "rawScoreDeltaPp": 3.729145383578558,
+      "method": "The graph model is re-scored after masking only features derived from this entity type; this is local sensitivity, not a causal claim."
+    },
+    {
+      "removed": "device connection",
+      "riskAfterRemoval": 0.3684210526315789,
+      "riskDeltaPp": 0.0,
+      "rawScoreAfterRemoval": 0.8894901752993757,
+      "rawScoreDeltaPp": 0.0,
+      "method": "The graph model is re-scored after masking only features derived from this entity type; this is local sensitivity, not a causal claim."
+    },
+    {
+      "removed": "address connection",
+      "riskAfterRemoval": 0.3684210526315789,
+      "riskDeltaPp": 0.0,
+      "rawScoreAfterRemoval": 0.8952136125936574,
+      "rawScoreDeltaPp": -0.5723437294281708,
+      "method": "The graph model is re-scored after masking only features derived from this entity type; this is local sensitivity, not a causal claim."
+    }
+  ],
+  "operationalConfidence": {
+    "level": "low",
+    "riskProbability": 0.3684210526315789,
+    "calibrationSupport": 454,
+    "nearbyValidationFraudRate": 0.36123348017621143,
+    "reasons": [
+      "current-vs-validation drift is outside the approved boundary (max PSI 0.504)",
+      "only 454 validation events sit near this calibrated risk"
+    ],
+    "boundary": "Confidence is an operational gate derived from calibration support, entity novelty, and drift; it is not another fraud probability."
+  },
+  "temporalGuard": {
+    "targetDatasetSecond": 13988184,
+    "graphCutoff": "strictly before the target event is inserted",
+    "labelAvailabilityDelayHours": 24,
+    "futureLabelsAccessible": false,
+    "guard": "score current event \u2192 emit decision evidence \u2192 insert event for future transactions"
+  },
+  "scoringMode": "The event sequence is a deterministic replay derived from locked-test rows. Model inference, calibration, counterfactual re-scoring, policy, guardrails, HMAC validation, and audit chaining execute on each request.",
+  "agentSummary": "The connected subgraph contains 8 transactions and 13 linked entities. The device had already appeared with 1 other card profiles before this payment. Graph context changed calibrated risk from 7.8% to 36.8%. The prior one-hour component pressure score was 302.",
+  "proposedAction": {
+    "action": "review",
+    "reason": "Input drift exceeds the approved operating envelope. Automated action is paused until a reviewer confirms the case.",
+    "costs": {
+      "allow": 0.0,
+      "review": 120.0,
+      "hold": 0.0
+    },
+    "risk_probability": 0.368421,
+    "degraded": true
+  },
+  "blastRadius": {
+    "hold": [],
+    "review": [
+      "TX-3518101",
+      "TX-3518275",
+      "TX-3518332"
+    ],
+    "allow": [
+      "TX-3517730",
+      "TX-3517758",
+      "TX-3517802",
+      "TX-3517971",
+      "TX-3518068"
+    ],
+    "rule": "No shared entity is globally blocked; only transaction-level actions are permitted without analyst approval."
+  },
+  "toolTrace": [
+    {
+      "tool": "verify_event",
+      "result": "Signature valid \u00b7 replay key unseen",
+      "status": "passed"
+    },
+    {
+      "tool": "score_transaction",
+      "result": "Calibrated standalone risk 7.8%",
+      "status": "passed"
+    },
+    {
+      "tool": "expand_temporal_graph",
+      "result": "21 nodes \u00b7 past-only context",
+      "status": "passed"
+    },
+    {
+      "tool": "estimate_ring_risk",
+      "result": "Contextual risk 36.8%",
+      "status": "passed"
+    },
+    {
+      "tool": "minimize_blast_radius",
+      "result": "0 holds \u00b7 3 reviews \u00b7 no entity block",
+      "status": "gated"
+    }
+  ],
+  "dataNote": "Labels, source USD amounts, times, and links are derived from IEEE-CIS/Vesta. Displayed/policy amounts use the explicit fixed scenario conversion USD 1 = INR 83; this is not an observed FX rate. Entity labels are hashed."
+}

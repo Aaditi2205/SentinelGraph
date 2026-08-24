@@ -1,0 +1,12 @@
+{
+  "verified": true,
+  "mode": "test",
+  "endpoint": "POST https://api.razorpay.com/v1/orders",
+  "http_status": 200,
+  "order_id": "order_TSw6GD142V6cCF",
+  "amount_paise": 100,
+  "currency": "INR",
+  "status": "created",
+  "credential_storage": "User-provided CSV outside repository; values were not copied or logged.",
+  "webhook_note": "Razorpay webhook secret is separately configured and was not present in the API-key export."
+}
